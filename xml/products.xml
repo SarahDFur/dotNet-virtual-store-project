@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<products.xml>
+  <Product>
+    <ID>111169</ID>
+    <Name>Blouse and pirates</Name>
+    <Artist>Jack</Artist>
+    <Style>Cubism</Style>
+    <AmountInStock>0</AmountInStock>
+    <Price>37.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111242</ID>
+    <Name>Shrinking while drinking</Name>
+    <Artist>Oliver</Artist>
+    <Style>SemiRealism</Style>
+    <AmountInStock>0</AmountInStock>
+    <Price>114.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111304</ID>
+    <Name>Serving clocks</Name>
+    <Artist>Eva</Artist>
+    <Style>SemiRealism</Style>
+    <AmountInStock>0</AmountInStock>
+    <Price>114.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111385</ID>
+    <Name>Dress to impress</Name>
+    <Artist>Bessi</Artist>
+    <Style>SemiRealism</Style>
+    <AmountInStock>0</AmountInStock>
+    <Price>101.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111453</ID>
+    <Name>Vestage</Name>
+    <Artist>Oliver</Artist>
+    <Style>Cubism</Style>
+    <AmountInStock>0</AmountInStock>
+    <Price>106.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111533</ID>
+    <Name>Roses with skulls</Name>
+    <Artist>Jack</Artist>
+    <Style>Cartoon</Style>
+    <AmountInStock>0</AmountInStock>
+    <Price>87.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111609</ID>
+    <Name>Sweater skull</Name>
+    <Artist>Tray</Artist>
+    <Style>Abstract</Style>
+    <AmountInStock>67</AmountInStock>
+    <Price>111.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111625</ID>
+    <Name>Serving socks</Name>
+    <Artist>Bessi</Artist>
+    <Style>Realism</Style>
+    <AmountInStock>99</AmountInStock>
+    <Price>25.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111707</ID>
+    <Name>Sweater wheather</Name>
+    <Artist>Tray</Artist>
+    <Style>Abstract</Style>
+    <AmountInStock>68</AmountInStock>
+    <Price>24.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111717</ID>
+    <Name>Dancing and drinking</Name>
+    <Artist>Tray</Artist>
+    <Style>Cartoon</Style>
+    <AmountInStock>84</AmountInStock>
+    <Price>127.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product> 
+  <Product>
+    <ID>111801</ID>
+    <Name>Shrinking Coral</Name>
+    <Artist>Tray</Artist>
+    <Style>Cartoon</Style>
+    <AmountInStock>89</AmountInStock>
+    <Price>117.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111827</ID>
+    <Name>Coral Jewl</Name>
+    <Artist>Mary</Artist>
+    <Style>Abstract</Style>
+    <AmountInStock>64</AmountInStock>
+    <Price>87.2</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111914</ID>
+    <Name>Pearl Mask</Name>
+    <Artist>Stephone</Artist>
+    <Style>Realism</Style>
+    <AmountInStock>98</AmountInStock>
+    <Price>72.1</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>111958</ID>
+    <Name>Electric Coffin</Name>
+    <Artist>Mary</Artist>
+    <Style>SemiRealism</Style>
+    <AmountInStock>82</AmountInStock>
+    <Price>57.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>112018</ID>
+    <Name>Stormy Springs</Name>
+    <Artist>Tray</Artist>
+    <Style>Cubism</Style>
+    <AmountInStock>64</AmountInStock>
+    <Price>174.3</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>112104</ID>
+    <Name>Shrinking Shack</Name>
+    <Artist>Tray</Artist>
+    <Style>Cartoon</Style>
+    <AmountInStock>89</AmountInStock>
+    <Price>117.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>112159</ID>
+    <Name>Whipping Willow</Name>
+    <Artist>Mary</Artist>
+    <Style>Abstract</Style>
+    <AmountInStock>64</AmountInStock>
+    <Price>87.2</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>112247</ID>
+    <Name>Mona Lisa</Name>
+    <Artist>Stephone</Artist>
+    <Style>Realism</Style>
+    <AmountInStock>98</AmountInStock>
+    <Price>72.1</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>112318</ID>
+    <Name>American Gothic</Name>
+    <Artist>Mary</Artist>
+    <Style>SemiRealism</Style>
+    <AmountInStock>82</AmountInStock>
+    <Price>57.9</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+  <Product>
+    <ID>112473</ID>
+    <Name>Guernica</Name>
+    <Artist>Tray</Artist>
+    <Style>Cubism</Style>
+    <AmountInStock>64</AmountInStock>
+    <Price>174.3</Price>
+    <IsDeleted>false</IsDeleted>
+    <Image></Image>
+  </Product>
+	
+</products.xml>

@@ -1,0 +1,145 @@
+﻿<Window x:Class="PL.Order.OrderOperationsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:PL.Order" xmlns:po="clr-namespace:PL.PO"
+        xmlns:converter="clr-namespace:PLConverter"
+        mc:Ignorable="d"
+        Title="OrderOperationsWindow"
+        Background="#AB8F89"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="Bahnschrift SemiLight"
+        Height="400" Width="750">
+    <!--TextElement.Foreground="{DynamicResource MaterialDesignBody}"-->
+    <!--Background="{DynamicResource MaterialDesignPaper}"-->
+    <Window.DataContext>
+        <po:Order/>
+    </Window.DataContext>
+    <Window.Resources>
+        <converter:StatusToShipDateVisibilityConverter x:Key="statusToShipDateVisibilityConverter"/>
+        <converter:StatusToDeliveryDateVisibilityConverter x:Key="statusToDeliveryDateVisibilityConverter"/>
+    </Window.Resources>
+    
+    <StackPanel Margin="0,0,0,3">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <StackPanel>
+                    <TextBlock Text="ID" Grid.Row="0"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding ID}" Width="100" HorizontalAlignment="Left" IsEnabled="False"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Customer name" Grid.Row="1"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CustomerName}" Width="100" HorizontalAlignment="Left"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Email" Grid.Row="2"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CustomerEmail}" Width="100" HorizontalAlignment="Left" 
+                             IsEnabled="False"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Address" Grid.Row="3"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding CustomerAddress}" Width="100" HorizontalAlignment="Left" 
+                             IsEnabled="False"/>
+
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Status" Grid.Row="4"/>
+                    <TextBlock x:Name="statustxtblock" Grid.Row="4" Grid.Column="1" Text="{Binding OrderStatus}" 
+                               Width="130" HorizontalAlignment="Left"
+                               IsEnabled="False"/>
+
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Order date" Grid.Row="5"/>
+                    <DatePicker x:Name="orderDatePicker"
+                                    Width="160" Height="22"
+                                    Margin="20,0,0,0"
+                                    FontSize="14"
+                                    HorizontalAlignment="Left"
+                                    SelectedDate="{Binding OrderDate}" 
+                                    Padding="0,0,0,4" 
+                                    Cursor="Hand" 
+                                    IsEnabled="False"
+                                    IsDropDownOpen="True"
+                                    AllowDrop="True"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Ship date" Grid.Row="6"/>
+                    <Button x:Name="ShipOrder" Content="Ship Order" HorizontalAlignment="Left" Margin="20,0,0,0" Width="100"
+                            Visibility="{Binding Path=OrderStatus, Converter={StaticResource statusToShipDateVisibilityConverter}}"
+                            Click="ShipOrder_Click"/>
+                    <DatePicker     x:Name="shipDatePicker"
+                                    Width="160" Height="22"
+                                    Margin="20,0,0,0"
+                                    FontSize="14"
+                                    HorizontalAlignment="Left"
+                                    SelectedDate="{Binding ShipDate}" 
+                                    Padding="0,0,0,4" 
+                                    Cursor="Hand" 
+                                    IsDropDownOpen="False"
+                                    AllowDrop="False"
+                                    IsEnabled="False"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Delivery date" Grid.Row="7"/>
+                    <Button x:Name="DeliveryOrder" Content="Deliver Order" HorizontalAlignment="Left" Margin="20,0,0,0" Width="100"
+                            Visibility="{Binding Path=OrderStatus, Converter={StaticResource statusToDeliveryDateVisibilityConverter}}"
+                            Click="DeliveryOrder_Click"/>
+                    <DatePicker     x:Name="deliveryDatePicker"
+                                    Width="160" Height="22"
+                                    Margin="20,0,0,0"
+                                    FontSize="14"
+                                    HorizontalAlignment="Left"
+                                    SelectedDate="{Binding DeliveryDate}" 
+                                    Padding="0,0,0,4" 
+                                    Cursor="Hand" 
+                                    IsDropDownOpen="False"
+                                    AllowDrop="True"
+                                    IsEnabled="False"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Total price" Grid.Row="8"/>
+                    <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding TotalPrice}" Width="100" HorizontalAlignment="Left" IsEnabled="False"/>
+                </StackPanel>
+
+                <!--<StackPanel>
+                    <Button Width="100" Content="Update order" Margin="0,10" Click="UpdateOrder_Click"/>
+                </StackPanel>-->
+            </StackPanel>
+
+            <DataGrid x:Name="ItemsListDataGrid" DataContext="{Binding Items}" ItemsSource="{Binding}" 
+                      CanUserAddRows="False" CanUserDeleteRows="True" SelectionMode="Single" SelectionUnit="FullRow" CanUserReorderColumns="False"
+                      AutoGenerateColumns="False" Grid.ColumnSpan="2" Margin="291,0,0,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Piece ID" Binding="{Binding ProductID}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Title" Binding="{Binding ProductName}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Amount ordered" Binding="{Binding Amount}"/>
+                    <DataGridTextColumn Header="Price per 1" Binding="{Binding Price}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Total Price" Binding="{Binding TotalPrice}" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </StackPanel>
+</Window>

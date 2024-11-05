@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <BaseOutputPath>$(SolutionDir)\bin\</BaseOutputPath>
+    <OutputPath>$(SolutionDir)\bin\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
+    <ApplicationIcon>Icon1.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="background.png" />
+    <None Remove="Manager.png" />
+    <None Remove="NewOrder.png" />
+    <None Remove="Product\AddProduct.png" />
+    <None Remove="Product\UpdateProduct.png" />
+    <None Remove="Tracking.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icon1.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BL\BL\BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="background.png" />
+    <Resource Include="Manager.png" />
+    <Resource Include="NewOrder.png" />
+    <Resource Include="Product\AddProduct.png" />
+    <Resource Include="Product\UpdateProduct.png" />
+    <Resource Include="Tracking.png" />
+  </ItemGroup>
+
+</Project>

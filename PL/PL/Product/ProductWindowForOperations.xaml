@@ -1,0 +1,77 @@
+﻿<Window x:Class="PL.Product.ProductWindowForOperations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Product" xmlns:po="clr-namespace:PL.PO"
+        mc:Ignorable="d"
+        Background="#AB8F89"
+        Title="ProductWindowForOperations" Height="450" Width="450">
+    <!--<Window.Resources>
+        <local:FalseTotrueVisibilityConverter 
+            x:Key="falseTotrueVisibilityConverter"/>
+    </Window.Resources>-->
+
+    <StackPanel Margin="10">
+        <Grid x:Name="ProductProperties" DataContext="{Binding}">
+            <!-- Row definitions -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- ID -->
+            <StackPanel Grid.Row="0">
+                <TextBlock Text="Product ID" Margin="0 0 0 5"/>
+                <TextBox x:Name="ProductID" Text="{Binding Path=ID}" Padding="2" HorizontalAlignment="Left" Width="100"
+                         Background="Cornsilk" TextChanged="ProductID_TextChanged" MaxLength="9"/>
+            </StackPanel>
+            <!-- Name -->
+            <StackPanel Grid.Row="1">
+                <TextBlock  Text="Product Name" Margin="0 5 0 5"/>
+                <TextBox x:Name="ProductName" Text="{Binding Path=Title}" Padding="2"
+                         Background="Cornsilk" HorizontalAlignment="Left" Width="150" TextChanged="ProductName_TextChanged"/>
+            </StackPanel>
+            <!-- Name of Artist -->
+            <StackPanel Grid.Row="2">
+                <TextBlock  Text="Name of Artist" Margin="0 5 0 5"/>
+                <TextBox x:Name="ArtistName" Text="{Binding Path=Artist}"
+                         Background="Cornsilk" Padding="2" HorizontalAlignment="Left" Width="150" TextChanged="ArtistName_TextChanged"/>
+            </StackPanel>
+            <!-- Price -->
+            <StackPanel Grid.Row="3">
+                <TextBlock  Text="Product Price" Margin="0 5 0 5"/>
+                <TextBox x:Name="ProductPrice" Text="{Binding Path=Price}" Padding="2"
+                         Background="Cornsilk" HorizontalAlignment="Left" Width="100" TextChanged="ProductPrice_TextChanged"/>
+            </StackPanel>
+            <!-- Category -->
+            <StackPanel Grid.Row="4">
+                <TextBlock  Text="Product Category" Margin="0 5 0 5"/>
+                <ComboBox x:Name="ProductCategory" 
+                          Background="Cornsilk" Text="{Binding Path=Style}" HorizontalAlignment="Left" Width="150" SelectionChanged="ProductCategory_SelectionChanged">
+                    <ComboBoxItem Content="None"/>
+                    <ComboBoxItem Content="Realism"/>
+                    <ComboBoxItem Content="Cartoon"/>
+                    <ComboBoxItem Content="Semi-Realism"/>
+                    <ComboBoxItem Content="Cubism"/>
+                    <ComboBoxItem Content="Abstract"/>
+                </ComboBox>
+            </StackPanel>
+            <!-- Amount of Product in stock -->
+            <StackPanel Grid.Row="5">
+                <TextBlock  Text="Amount of Product in stock" Margin="0 5 0 5"/>
+                <TextBox x:Name="ProductAmountInStock" Text="{Binding Path=Amount}" Padding="2"
+                         Background="Cornsilk" HorizontalAlignment="Left" Width="100" TextChanged="ProductAmountInStock_TextChanged"/>
+            </StackPanel>
+        </Grid>
+        <Button x:Name="AddProduct" Width="60" Click="AddProduct_Click">
+            <Image Source="/Product/AddProduct.png" Stretch="Uniform"/>
+        </Button>
+        <Button x:Name="UpdateProduct" Width="60" Margin="10" Click="UpdateProduct_Click">
+            <Image Source="/Product/UpdateProduct.png" Stretch="Uniform"/>
+        </Button>
+    </StackPanel>
+</Window>

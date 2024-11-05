@@ -1,0 +1,51 @@
+﻿<Window x:Class="PL.Order.OrderTrackingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Order" xmlns:po="clr-namespace:PL.PO" d:DataContext="{d:DesignInstance Type=po:OrderTracking}"
+        mc:Ignorable="d"
+        Background="#AB8F89"
+        Title="OrderTrackingWindow" Height="450" Width="800">
+    <StackPanel>
+        <Grid Margin="10,10,0,0" DataContext="{Binding}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <!-- order id text box -->
+            <TextBlock Text="Order ID:" Grid.Row="0"/>
+            <TextBox x:Name="OrderIDtxtbx" Grid.Column="1" KeyDown="IDTxtBox_KeyDown"/>
+            <!-- status of the order -->
+            <TextBlock Text="Status:" Grid.Row="1"/>
+            <TextBox Text="{Binding OrderStatus}" Grid.Column="1" Grid.Row="1" IsEnabled="False"/>
+            <!-- tracking list -->
+            <TextBlock Text="Tracking:" Grid.Row="2"/>
+
+            <ListView ItemsSource="{Binding Tracking}" Grid.Column="1" Grid.Row="2" IsEnabled="False" Background="#AB8F39">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Date + Status"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <!--<DataGrid x:Name="TrackingDataGrid" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" ItemsSource="{Binding Tracking}"
+                SelectionMode="Single" 
+                SelectionUnit="FullRow"
+                IsReadOnly="True" 
+                AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Tracking.Item1}"/>
+                </DataGrid.Columns>
+            </DataGrid>-->
+            
+        </Grid>
+        <Button x:Name="OrderViewBtn" Content="View entire Order" Margin="290,50,290,0" Click="OrderViewBtn_Click"/>
+    </StackPanel>
+</Window>
